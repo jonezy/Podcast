@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PodcastTracking.Data.Repository;
 using PodcastTracking.Web.Models;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace PodcastTracking.Web.Controllers
@@ -12,6 +13,15 @@ namespace PodcastTracking.Web.Controllers
         public PodcastController(IPodcastRepository repository)
         {
             _repository = repository;
+        }
+
+        public ActionResult All()
+        {
+            var podcasts = _repository.GetAll();
+            var viewModel = Mapper.Map<List<PodcastViewModel>>(podcasts);
+
+            return View(viewModel);
+
         }
 
         public ActionResult Index(int id)

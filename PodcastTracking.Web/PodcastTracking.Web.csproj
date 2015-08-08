@@ -191,6 +191,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Feed\Import.cshtml" />
     <Content Include="Views\Podcast\Index.cshtml" />
+    <Content Include="Views\Podcast\All.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

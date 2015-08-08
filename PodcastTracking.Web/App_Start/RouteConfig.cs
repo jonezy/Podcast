@@ -12,13 +12,24 @@ namespace PodcastTracking.Web
             routes.MapRoute(
                 name: "DownloadTracking",
                 url: "download/track/{urlToTrack}",
-                defaults: new { controller = "Download", action="Track", urlToTrack = UrlParameter.Optional }
+                defaults: new { controller = "download", action="track", urlToTrack = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "PodcastList",
+                url: "podcast/all",
+                defaults: new { controller = "podcast", action="all"}
+            );
+            routes.MapRoute(
+                name: "PodcastDetails",
+                url: "podcast/{id}",
+                defaults: new { controller = "podcast", action="index"}
             );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "home", action = "index", id = UrlParameter.Optional }
             );
         }
     }

@@ -24,10 +24,9 @@ namespace PodcastTracking.Web.Controllers
         [HttpPost]
         public ActionResult Import(ImportFeedEditModel model)
         {
-            _service.Import(model.FeedUrl);
+            var id = _service.Import(model.FeedUrl);
 
-
-            return RedirectToAction("index", "podcast", new { @id = 1 });
+            return RedirectToAction("index", "podcast", new { @id = id });
         }
 
     }

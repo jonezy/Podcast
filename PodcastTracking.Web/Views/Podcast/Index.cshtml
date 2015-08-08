@@ -5,10 +5,16 @@
 
 <h2>@Model.Title</h2>
 <p>@Model.Description</p>
-
-@foreach (var episode in Model.Episodes)
-{
-    <h4>
-        @episode.Title
-    </h4>
-}
+<h3>Episodes</h3>
+<div class="row">
+    @foreach (var episode in Model.Episodes)
+    {
+        <div class="col-lg-12">
+            <h4>
+                @episode.Title
+            </h4>
+            <p>@MvcHtmlString.Create(@episode.Description)</p>
+        </div>
+        <hr />
+    }
+</div>
