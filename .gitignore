@@ -1,0 +1,14 @@
+*.suo
+*.user
+[Dd]ebug
+[Rr]elease
+[Bb]in
+[Oo]bj
+
+*.VisualState.xml
+TestResult.xml
+
+
+*.nupkg
+**/packages/*
+!**/packages/build/

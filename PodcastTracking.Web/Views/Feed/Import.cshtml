@@ -1,0 +1,13 @@
+﻿@inherits WebViewPage<PodcastTracking.Web.Models.ImportFeedEditModel>
+
+@{
+    ViewBag.Title = "Import";
+}
+
+<h2>Import</h2>
+
+@using (Html.BeginForm("Import"))
+{
+    @Html.TextBoxFor(m => m.FeedUrl, new { Value="http://www.the416.net/416/?format=rss"})
+    <input type="submit" value="Import Feed" />
+}

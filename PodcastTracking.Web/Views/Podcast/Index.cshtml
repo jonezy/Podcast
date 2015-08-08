@@ -1,0 +1,14 @@
+﻿@model PodcastTracking.Web.Models.PodcastViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Model.Title</h2>
+<p>@Model.Description</p>
+
+@foreach (var episode in Model.Episodes)
+{
+    <h4>
+        @episode.Title
+    </h4>
+}
