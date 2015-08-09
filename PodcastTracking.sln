@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodcastTracking.Data.Entity
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodcastTracking.Data", "PodcastTracking.Data\PodcastTracking.Data.csproj", "{F7DFAF3E-ABCC-47B8-A2BB-4268B8BFD19F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodcastTracking.Test.Unit", "PodcastTracking.Test.Unit\PodcastTracking.Test.Unit.csproj", "{BEB14E65-C536-4582-A31E-23C6BD5C36F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodcastTracking.Data.EntityFramework.Test.Integration", "PodcastTracking.Data.EntityFramework.Test.Integration\PodcastTracking.Data.EntityFramework.Test.Integration.csproj", "{630FFD91-0D46-4E57-B441-67E916924D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodcastTracking.Web.Application.Test.Unit", "PodcastTracking.Web.Application.Test.Unit\PodcastTracking.Web.Application.Test.Unit.csproj", "{BC4A0AF8-6EE1-4F0A-95F3-EC0B4A930E0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +43,14 @@ Global
 		{F7DFAF3E-ABCC-47B8-A2BB-4268B8BFD19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7DFAF3E-ABCC-47B8-A2BB-4268B8BFD19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7DFAF3E-ABCC-47B8-A2BB-4268B8BFD19F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BEB14E65-C536-4582-A31E-23C6BD5C36F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BEB14E65-C536-4582-A31E-23C6BD5C36F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BEB14E65-C536-4582-A31E-23C6BD5C36F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BEB14E65-C536-4582-A31E-23C6BD5C36F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{630FFD91-0D46-4E57-B441-67E916924D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630FFD91-0D46-4E57-B441-67E916924D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630FFD91-0D46-4E57-B441-67E916924D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630FFD91-0D46-4E57-B441-67E916924D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC4A0AF8-6EE1-4F0A-95F3-EC0B4A930E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC4A0AF8-6EE1-4F0A-95F3-EC0B4A930E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC4A0AF8-6EE1-4F0A-95F3-EC0B4A930E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC4A0AF8-6EE1-4F0A-95F3-EC0B4A930E0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
