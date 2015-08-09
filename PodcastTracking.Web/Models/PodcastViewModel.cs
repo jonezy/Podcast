@@ -8,6 +8,6 @@ namespace PodcastTracking.Web.Models
         public int PodcastId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public List<Episode> Episodes { get; set; }
+        public List<EpisodeViewModel> Episodes { get; set; }
     }
 }

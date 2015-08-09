@@ -1,8 +1,4 @@
 ﻿using PodcastTracking.Web.Application.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PodcastTracking.Web.Controllers
@@ -16,11 +12,11 @@ namespace PodcastTracking.Web.Controllers
             _podcastService = podcastService;
         }
 
-        public ActionResult Track(string url)
+        public ActionResult Track(string urlToTrack)
         {
-            _podcastService.TrackEpisodeDownload(url, Request);
+            _podcastService.TrackEpisodeDownload(urlToTrack, Request);
 
-            Response.Redirect(url);
+            Response.Redirect(urlToTrack);
 
             return new EmptyResult();
         }

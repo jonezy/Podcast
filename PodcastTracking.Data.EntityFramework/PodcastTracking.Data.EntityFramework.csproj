@@ -56,6 +56,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PodcastTrackingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\EpisodeRepository.cs" />
     <Compile Include="Repository\PodcastRepository.cs" />
     <Compile Include="Repository\PublisherRepository.cs" />
     <Compile Include="Repository\Repository.cs" />

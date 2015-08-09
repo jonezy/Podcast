@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml.Linq;
 
-namespace PodcastTracking.Web.Application.Services
+namespace PodcastTracking.Web.Application.Parsers
 {
     public interface IFeedParser<T>
     {

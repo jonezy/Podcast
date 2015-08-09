@@ -1,0 +1,26 @@
+﻿@model System.Collections.Generic.List<PodcastTracking.Web.Models.DownloadViewModel>
+@{
+    ViewBag.Title = "Downloads";
+}
+
+<h2>Downloads</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date/Time</th>
+            <th>IP Address</th>
+            <th>Referer</th>
+            <th>User Agent</th>
+        </tr>
+    </thead>
+    @foreach (var download in @Model)
+    {
+        <tr>
+            <td>@download.DateTime</td>
+            <td>@download.IPAddress</td>
+            <td>@download.Referer</td>
+            <td>@download.UserAgent</td>
+        </tr>
+    }
+</table>

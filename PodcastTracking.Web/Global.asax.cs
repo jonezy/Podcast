@@ -6,8 +6,8 @@ using PodcastTracking.Data.EntityFramework.Repository;
 using PodcastTracking.Data.Repository;
 using PodcastTracking.Domain.Model;
 using PodcastTracking.Domain.Service;
+using PodcastTracking.Web.Application.Parsers;
 using PodcastTracking.Web.Application.Services;
-using PodcastTracking.Web.Controllers;
 using PodcastTracking.Web.Models;
 using System.Configuration;
 using System.Web.Mvc;
@@ -33,8 +33,9 @@ namespace PodcastTracking.Web
 
         private void RegisterMappings()
         {
+            Mapper.CreateMap<Download, DownloadViewModel>();
             Mapper.CreateMap<Podcast, PodcastViewModel>();
-            Mapper.CreateMap<Episode, EpisodeViewModel>();
+            Mapper.CreateMap<Episode, EpisodeViewModel>().ForMember(dest => dest.DownloadCount, opt => opt.MapFrom(src => src.Downloads.Count));
 
             Mapper.AssertConfigurationIsValid();
         }
@@ -54,10 +55,10 @@ namespace PodcastTracking.Web
                 return context;
             }).InstancePerRequest();
 
+            builder.RegisterType<EpisodeRepository>().As<IEpisodeRepository>();
             builder.RegisterType<PodcastRepository>().As<IPodcastRepository>();
             builder.RegisterType<PublisherRepository>().As<IPublisherRepository>();
             builder.RegisterType<PodcastService>().As<IPodcastService>();
-            builder.RegisterType<DownloadTrackingService>().As<IDownloadTrackingService>();
 
             builder.RegisterType<FeedLoader>().As<IFeedLoader>();
             builder.RegisterType<EpisodeParser>().As<IMultipleFeedParser<Episode>>();

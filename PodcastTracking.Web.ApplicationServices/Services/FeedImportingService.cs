@@ -1,7 +1,8 @@
-﻿using System.Linq;
-using PodcastTracking.Data.Repository;
+﻿using PodcastTracking.Data.Repository;
 using PodcastTracking.Domain.Model;
 using PodcastTracking.Domain.Service;
+using PodcastTracking.Web.Application.Parsers;
+using System.Linq;
 using System.Xml.Linq;
 
 namespace PodcastTracking.Web.Application.Services

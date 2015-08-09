@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace PodcastTracking.Domain.Model
+namespace PodcastTracking.Web.Models
 {
-    public class Download
+    public class DownloadViewModel
     {
-        public int DownloadId { get; set; }
         public DateTime DateTime { get; set; }
         public string IPAddress { get; set; }
         public string Referer { get; set; }

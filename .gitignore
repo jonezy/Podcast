@@ -10,5 +10,6 @@ TestResult.xml
 
 
 *.nupkg
+packages/*
 **/packages/*
 !**/packages/build/

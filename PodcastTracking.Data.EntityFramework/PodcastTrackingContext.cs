@@ -7,7 +7,7 @@ namespace PodcastTracking.Data.EntityFramework
     {
         public PodcastTrackingContext()
         {
-
+            Configuration.LazyLoadingEnabled = true;
         }
         public PodcastTrackingContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {

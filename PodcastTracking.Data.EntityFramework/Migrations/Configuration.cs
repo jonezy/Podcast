@@ -1,13 +1,7 @@
-using System;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
-using System.Linq;
-using PodcastTracking.Domain.Model;
-using PodcastTracking.Data.EntityFramework;
 
 namespace PodcastTracking.Data.EntityFramework.Migrations
 {
-
     internal sealed class Configuration : DbMigrationsConfiguration<PodcastTrackingContext>
     {
         public Configuration()
