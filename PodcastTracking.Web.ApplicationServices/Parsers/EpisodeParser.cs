@@ -17,6 +17,7 @@ namespace PodcastTracking.Web.Application.Parsers
                 select episode;
 
             var episodes = new List<Episode>();
+            XNamespace MEDIA = "http://www.rssboard.org/media-rss";
             foreach (var item in items)
             {
                 episodes.Add(new Episode
@@ -26,7 +27,8 @@ namespace PodcastTracking.Web.Application.Parsers
                     Author = item.Element(ITUNES + "author").Value,
                     PublishDate = DateTime.Parse(item.Element("pubDate").Value),
                     EpisodeUrl = item.Element("link").Value,
-                    EpisodeDownloadUrl = item.Element("enclosure").Attribute("url").Value
+                    EpisodeDownloadUrl = item.Element("enclosure").Attribute("url").Value,
+                    Image = item.Element(ITUNES + "image").Attribute("href").Value
                 });
             }
 

@@ -2,6 +2,7 @@
 using PodcastTracking.Domain.Model;
 using PodcastTracking.Domain.Service;
 using PodcastTracking.Web.Application.Parsers;
+using System;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -45,14 +46,22 @@ namespace PodcastTracking.Web.Application.Services
 
             XDocument xml = _feedLoader.Load(feedUrl);
             var episodes = _epiosdeParser.Parse(xml, feedUrl);
+            var podcast = _podcastParser.Parse(xml, feedUrl);
             if(existingPodcast != null)
             {
+                existingPodcast.Image = podcast.Image;
+                existingPodcast.LastUpdated = DateTime.Now;
+                existingPodcast.Link = podcast.Link;
+                existingPodcast.Title = podcast.Title;
+                existingPodcast.FeedUrl = feedUrl;
+                existingPodcast.Description = podcast.Description;
+                existingPodcast.Category = podcast.Category;
+
                 existingPodcast.Episodes = _episodeService.UpdateEpisodes(existingPodcast.Episodes.ToList(), episodes);
                 _publisherRepository.InsertOrUpdate(existingPodcast.Publisher);
                 return existingPodcast.PodcastId;
             }
 
-            var podcast = _podcastParser.Parse(xml, feedUrl);
             var publisher = _publisherParser.Parse(xml, feedUrl);
 
             podcast.Episodes = episodes;

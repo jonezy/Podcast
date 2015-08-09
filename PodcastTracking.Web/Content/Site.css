@@ -22,3 +22,7 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.podcast-logo {margin:10px 10px 0 0}
+.episode-logo {margin: 0 10px 0 0}
+.btn-primary a {color:#fff;}

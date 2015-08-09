@@ -12,6 +12,7 @@ namespace PodcastTracking.Web.Models
         public string Author { get; set;}
         public string EpisodeDownloadUrl { get; set; }
         public int DownloadCount { get; set; }
+        public string Image { get; set; }
         public List<DownloadViewModel> Downloads { get; set; }
     }
 }

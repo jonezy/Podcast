@@ -9,9 +9,11 @@ namespace PodcastTracking.Data.EntityFramework
         {
             Configuration.LazyLoadingEnabled = true;
         }
+
         public PodcastTrackingContext(string nameOrConnectionString) : base(nameOrConnectionString)
         {
             Database.SetInitializer<PodcastTrackingContext>(new DropCreateDatabaseIfModelChanges<PodcastTrackingContext>());
+            Configuration.LazyLoadingEnabled = true;
         }
 
         public virtual DbSet<Publisher> Publishers { get; set; }

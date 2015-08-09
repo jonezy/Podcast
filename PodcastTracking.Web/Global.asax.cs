@@ -66,6 +66,7 @@ namespace PodcastTracking.Web
             builder.RegisterType<PublisherParser>().As<IFeedParser<Publisher>>();
 
             builder.RegisterType<FeedImportingService>().As<IFeedImportingService>();
+            builder.RegisterType<FeedGenerator>().As<IFeedGenerator>();
             builder.RegisterType<EpisodeService>().As<IEpisodeService>();
 
             return builder.Build();

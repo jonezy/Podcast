@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 
-namespace PodcastTracking.Test.Unit
+namespace PodcastTracking.Data.Test.Integration
 {
     [TestFixture]
     public class DataTests
@@ -54,7 +54,7 @@ namespace PodcastTracking.Test.Unit
 
             _context.Publishers.Add(publisher);
             _context.SaveChanges();
-}
+        }
 
         [TestFixtureTearDown]
         public void TearDown()
@@ -81,7 +81,7 @@ namespace PodcastTracking.Test.Unit
         [Test]
         public void Can_Retreive_Podcast_Episode_By_EpisodeUrl()
         {
-            var episodeUrl = "http://the416.net/416/EP20.mp3";
+            var episodeUrl = "http://the416.net/416/20";
             var podcasts = _context.Podcasts;
             Episode episode = null;
             foreach (var podcast in podcasts)

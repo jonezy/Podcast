@@ -11,8 +11,8 @@ namespace PodcastTracking.Web
 
             routes.MapRoute(
                 name: "DownloadTracking",
-                url: "download/track/{urlToTrack}",
-                defaults: new { controller = "download", action="track", urlToTrack = UrlParameter.Optional }
+                url: "download/track/{u}",
+                defaults: new { controller = "download", action="track", u = UrlParameter.Optional }
             );
 
             routes.MapRoute(
@@ -20,10 +20,17 @@ namespace PodcastTracking.Web
                 url: "podcast/all",
                 defaults: new { controller = "podcast", action="all"}
             );
+
             routes.MapRoute(
                 name: "PodcastDetails",
                 url: "podcast/{id}",
                 defaults: new { controller = "podcast", action="index"}
+            );
+
+            routes.MapRoute(
+                name: "PodcastFeed",
+                url: "podcast/{id}/feed",
+                defaults: new { controller = "podcast", action = "feed" }
             );
 
             routes.MapRoute(

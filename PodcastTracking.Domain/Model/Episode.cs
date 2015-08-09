@@ -17,6 +17,7 @@ namespace PodcastTracking.Domain.Model
         public string Description { get; set; }
         public string EpisodeUrl { get; set; }
         public string EpisodeDownloadUrl { get; set; }
+        public string Image { get; set; }
         public virtual ICollection<Download> Downloads { get; set; }
         public virtual Podcast Podcast { get; set; }
     }
