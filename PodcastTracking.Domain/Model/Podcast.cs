@@ -22,5 +22,6 @@ namespace PodcastTracking.Domain.Model
         public virtual ICollection<Episode> Episodes { get; set; }
 
         public virtual Publisher Publisher { get; set; }
+        public virtual Feed Feed { get; set; }
     }
 }

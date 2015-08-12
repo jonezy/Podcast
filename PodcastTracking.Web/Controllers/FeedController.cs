@@ -8,16 +8,16 @@ namespace PodcastTracking.Web.Controllers
     public class FeedController : Controller
     {
         private IFeedImportingService _service;
+        private IFeedService _feedService;
 
-        public FeedController(IFeedImportingService service)
+        public FeedController(IFeedImportingService service, IFeedService feedService)
         {
             _service = service;
-
+            _feedService = feedService;
         }
 
         public ActionResult Import()
         {
-
             return View();
         }
 
@@ -29,5 +29,13 @@ namespace PodcastTracking.Web.Controllers
             return RedirectToAction("index", "podcast", new { @id = id });
         }
 
+        public string Feed(int id)
+        {
+            var feed = _feedService.GenerateFeed(id);
+
+            Response.ContentType = "text/xml";
+
+            return feed;
+        }
     }
 }

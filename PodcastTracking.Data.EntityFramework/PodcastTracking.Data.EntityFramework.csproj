@@ -51,12 +51,14 @@
   <ItemGroup>
     <Compile Include="Configuration\DownloadConfiguration.cs" />
     <Compile Include="Configuration\EpisodeConfiguration.cs" />
+    <Compile Include="Configuration\FeedConfiguration.cs" />
     <Compile Include="Configuration\PodcastConfiguration.cs" />
     <Compile Include="Configuration\PublisherConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PodcastTrackingContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\EpisodeRepository.cs" />
+    <Compile Include="Repository\FeedRepository.cs" />
     <Compile Include="Repository\PodcastRepository.cs" />
     <Compile Include="Repository\PublisherRepository.cs" />
     <Compile Include="Repository\Repository.cs" />

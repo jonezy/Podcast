@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using PodcastTracking.Data.Repository;
-using PodcastTracking.Web.Application.Services;
 using PodcastTracking.Web.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,13 +11,11 @@ namespace PodcastTracking.Web.Controllers
     {
         private IPodcastRepository _repository;
         private IEpisodeRepository _episodeRepository;
-        private IFeedGenerator _feedGenerator;
 
-        public PodcastController(IPodcastRepository repository, IEpisodeRepository episodeRepository, IFeedGenerator feedGenerator)
+        public PodcastController(IPodcastRepository repository, IEpisodeRepository episodeRepository)
         {
             _repository = repository;
             _episodeRepository = episodeRepository;
-            _feedGenerator = feedGenerator;
         }
 
         public ActionResult All()
@@ -27,7 +24,6 @@ namespace PodcastTracking.Web.Controllers
             var viewModel = Mapper.Map<List<PodcastViewModel>>(podcasts);
 
             return View(viewModel.OrderBy(p => p.Title).ToList());
-
         }
 
         public ActionResult Index(int id)
@@ -44,15 +40,6 @@ namespace PodcastTracking.Web.Controllers
             var viewModel = Mapper.Map<List<DownloadViewModel>>(episode.Downloads);
 
             return View(viewModel);
-        }
-
-        public string Feed(int id)
-        {
-            var podcast = _repository.Find(p => p.PodcastId == id);
-
-            Response.ContentType = "text/xml";
-
-            return _feedGenerator.GenerateFeed(podcast.FeedUrl);
         }
     }
 }

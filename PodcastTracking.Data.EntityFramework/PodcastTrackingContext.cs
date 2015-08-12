@@ -1,4 +1,5 @@
-﻿using PodcastTracking.Domain.Model;
+﻿using PodcastTracking.Data.EntityFramework.Configuration;
+using PodcastTracking.Domain.Model;
 using System.Data.Entity;
 
 namespace PodcastTracking.Data.EntityFramework
@@ -20,5 +21,17 @@ namespace PodcastTracking.Data.EntityFramework
         public virtual DbSet<Podcast> Podcasts {get; set;}
         public virtual DbSet<Episode> Episodes { get; set; }
         public virtual DbSet<Download> Downloads { get; set; }
+
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Configurations.Add(new DownloadConfiguration());
+            modelBuilder.Configurations.Add(new EpisodeConfiguration());
+            modelBuilder.Configurations.Add(new PodcastConfiguration());
+            modelBuilder.Configurations.Add(new PublisherConfiguration());
+            modelBuilder.Configurations.Add(new FeedConfiguration());
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

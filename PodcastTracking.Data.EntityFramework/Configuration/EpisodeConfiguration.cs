@@ -9,9 +9,9 @@ namespace PodcastTracking.Data.EntityFramework.Configuration
         {
             HasKey(e => e.EpisodeId);
 
-            HasRequired<Podcast>(p => p.Podcast)
-                .WithMany(e => e.Episodes)
-                .HasForeignKey(p => p.EpisodeId);
+            //HasRequired<Podcast>(p => p.Podcast)
+            //    .WithMany(e => e.Episodes)
+            //    .HasForeignKey(p => p.EpisodeId);
         }
     }
 }

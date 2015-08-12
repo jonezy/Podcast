@@ -50,6 +50,7 @@
     <Compile Include="Parsers\IFeedParser.cs" />
     <Compile Include="Parsers\PublisherParser.cs" />
     <Compile Include="Parsers\PodcastParser.cs" />
+    <Compile Include="Services\FeedService.cs" />
     <Compile Include="Services\PodcastService.cs" />
   </ItemGroup>
   <ItemGroup>

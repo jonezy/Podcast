@@ -29,8 +29,8 @@ namespace PodcastTracking.Web
 
             routes.MapRoute(
                 name: "PodcastFeed",
-                url: "podcast/{id}/feed",
-                defaults: new { controller = "podcast", action = "feed" }
+                url: "feed/{id}",
+                defaults: new { controller = "feed", action = "feed" }
             );
 
             routes.MapRoute(

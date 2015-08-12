@@ -58,16 +58,18 @@ namespace PodcastTracking.Web
             builder.RegisterType<EpisodeRepository>().As<IEpisodeRepository>();
             builder.RegisterType<PodcastRepository>().As<IPodcastRepository>();
             builder.RegisterType<PublisherRepository>().As<IPublisherRepository>();
-            builder.RegisterType<PodcastService>().As<IPodcastService>();
+            builder.RegisterType<FeedRepository>().As<IFeedRepository>();
 
             builder.RegisterType<FeedLoader>().As<IFeedLoader>();
             builder.RegisterType<EpisodeParser>().As<IMultipleFeedParser<Episode>>();
             builder.RegisterType<PodcastParser>().As<IFeedParser<Podcast>>();
             builder.RegisterType<PublisherParser>().As<IFeedParser<Publisher>>();
 
+            builder.RegisterType<PodcastService>().As<IPodcastService>();
             builder.RegisterType<FeedImportingService>().As<IFeedImportingService>();
             builder.RegisterType<FeedGenerator>().As<IFeedGenerator>();
             builder.RegisterType<EpisodeService>().As<IEpisodeService>();
+            builder.RegisterType<FeedService>().As<IFeedService>();
 
             return builder.Build();
         }
