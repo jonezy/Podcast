@@ -161,6 +161,7 @@
     </Compile>
     <Compile Include="Models\DownloadViewModel.cs" />
     <Compile Include="Models\EpisodeViewModel.cs" />
+    <Compile Include="Models\FeedViewModel.cs" />
     <Compile Include="Models\ImportFeedEditModel.cs" />
     <Compile Include="Models\PodcastViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

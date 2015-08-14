@@ -11,8 +11,8 @@
         <button class="btn btn-primary" type="button">
             @Html.ActionLink("View Feed", "feed", new {controller="feed", @id=Model.PodcastId}, new { target="_blank"})
         </button>
+        <small>(Last Updated: @Model.Feed.LastUpdated)</small>
     </div>
-
 </div>
 <h3>Episodes</h3>
 <div class="row">

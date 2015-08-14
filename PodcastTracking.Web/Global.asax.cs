@@ -35,7 +35,9 @@ namespace PodcastTracking.Web
         {
             Mapper.CreateMap<Download, DownloadViewModel>();
             Mapper.CreateMap<Podcast, PodcastViewModel>();
-            Mapper.CreateMap<Episode, EpisodeViewModel>().ForMember(dest => dest.DownloadCount, opt => opt.MapFrom(src => src.Downloads.Count));
+            Mapper.CreateMap<Episode, EpisodeViewModel>()
+                .ForMember(dest => dest.DownloadCount, opt => opt.MapFrom(src => src.Downloads.Count));
+            Mapper.CreateMap<Feed, FeedViewModel>();
 
             Mapper.AssertConfigurationIsValid();
         }
